@@ -16,6 +16,7 @@ public class Test1 {
 
         System.out.println(persona1.toString());
 
+
         Persona persona2 = new Persona();
         persona2.setNombre("Pablo");
         persona2.setApellido("Gomez");

@@ -37,9 +37,9 @@ public class SuperHeroe {
      * @return
      */
     public int jugar(SuperHeroe superHeroe) {
-        double seleccion = azar(1, 3);
+        int seleccion = azar(3, 1);
         int response = 0;
-        switch ((int) seleccion) {
+        switch (seleccion) {
 
             case 1:
                 response = compararAtributos(this.fuerza,superHeroe.getFuerza());

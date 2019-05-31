@@ -13,17 +13,40 @@ public class Test3 {
 
         SuperHeroe superHeroe2 = new SuperHeroe("Superman",95,60,70);
 
-        System.out.println("El super heroe " + superHeroe2.getNombre() + " jugo con el super heroe: " + superHeroe1.getNombre()
-                + ", el resultado del juego fue: " + superHeroe2.jugar(superHeroe1));
+        quienGana(superHeroe1,superHeroe2);
 
-        System.out.println("El super heroe " + superHeroe1.getNombre() + " jugo con el super heroe: " + superHeroe2.getNombre()
-                + ", el resultado del juego fue: " + superHeroe1.jugar(superHeroe2));
+    }
 
+    public static void quienGana(SuperHeroe superHeroe1, SuperHeroe superHeroe2){
+        int cantidad = 0;
+        int sumaGanadasHeroe1 = 0;
+        int sumaGanadasHeroe2 = 0;
 
+        String elGanador;
+        while (cantidad < 3){
+            cantidad++;
 
+            int resultadoJuego = superHeroe1.jugar(superHeroe2);
+            if(resultadoJuego == 2){
+                sumaGanadasHeroe2 ++;
+            }
+            if(resultadoJuego == 1){
+                sumaGanadasHeroe1 ++;
+            }
+            if(resultadoJuego == 3){
+                sumaGanadasHeroe1++;
+                sumaGanadasHeroe2++;
+            }
 
+        }
 
+        if(sumaGanadasHeroe1 > sumaGanadasHeroe2){
+            elGanador = superHeroe1.getNombre();
+        } else {
+            elGanador = superHeroe2.getNombre();
+        }
 
+        System.out.println("El ganador del juego es: " + elGanador);
 
     }
 }
